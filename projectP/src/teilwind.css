@@ -1,0 +1,7 @@
+/* npx tailwindcss build src/teilwind.css -o src/teilWind/teilWindFinal.css      este es el codigo para compilar el archivo*/
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
