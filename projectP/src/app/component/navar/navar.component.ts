@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Renderer2, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-navar',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavarComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+
+  //@ViewChild("myButton") myButton: ElementRef;
+  @ViewChild('myButton', {static: false}) myButton: ElementRef;
+
+ 
+  constructor(private renderer: Renderer2) {
+
+   }
+
+  ngOnInit() {
+      this.removeClass();
+  }
+
+   public removeClass(){
+    console.log("me diste click");
+    this.renderer.removeClass(this.myButton.nativeElement, "lg:hidden");
   }
 
 }
